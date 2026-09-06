@@ -23,7 +23,6 @@
     $result = mysqli_query($con, $sql);
     $order = 1;
 ?>
-
 <table border="1">
     <thead>
         <tr>
@@ -45,13 +44,12 @@
                 <td> <?php echo $row["emp_name"] ?> </td>
                 <td> <?php echo $row["emp_surname"] ?> </td>
                 <td> <?php echo $row["emp_birthday"] ?> </td>
-                <td> <a href="editform.php?emp_id=<?php echo $row["emp_id"]?>"> แก้ไขข้อมูล </a></td>
-                <td> <a href="deletedata.php?emp_id=<?php echo $row["emp_id"]?>"> ลบข้อมูล </a></td>
+                <td> <a href="editformdata.php?emp_id=<?php echo $row["emp_id"]?>"> แก้ไขข้อมูล </a></td>
+                <td> <a href="deletedata.php?emp_id=<?php echo $row["emp_id"]?>"  onclick = "return confirm ('ยืนยันการลบข้อมูล')"> ลบข้อมูล </a></td>
         </tr>
     </tbody>
     <?php }  ?>
 </table>
-
 <div> <a href="insertform.php">กรอกข้อมูลพนักงาน</a> </div>
 </body>
 </html>
